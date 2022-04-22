@@ -1,0 +1,27 @@
+{
+  "name": "@hyhan-cli/core",
+  "version": "1.0.0",
+  "description": "hyhan-cli core",
+  "keywords": [
+    "cli",
+    "core",
+    "hyhan"
+  ],
+  "author": "hui <125173679@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/core.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@hyhan-cli/utils": "^1.0.0"
+  }
+}
