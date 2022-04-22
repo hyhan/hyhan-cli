@@ -26,5 +26,9 @@
   },
   "dependencies": {
     "@hyhan-cli/utils": "^1.0.1"
+  },
+  "gitHead": "f901977e42e051b87883fc66b299ebf8c8cc4c4d",
+  "publishConfig": {
+    "access": "public"
   }
 }
