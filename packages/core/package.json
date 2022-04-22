@@ -1,6 +1,6 @@
 {
   "name": "@hyhan-cli/core",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "hyhan-cli core",
   "keywords": [
     "cli",
@@ -25,7 +25,7 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "@hyhan-cli/utils": "^1.0.1"
+    "@hyhan-cli/utils": "^1.0.0"
   },
   "gitHead": "f901977e42e051b87883fc66b299ebf8c8cc4c4d",
   "publishConfig": {
