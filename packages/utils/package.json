@@ -1,6 +1,6 @@
 {
   "name": "@hyhan-cli/utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "hyhan-cli utils",
   "author": "hui <125173679@qq.com>",
   "homepage": "",
@@ -15,7 +15,5 @@
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
-  },
-  "dependencies": {
   }
 }
