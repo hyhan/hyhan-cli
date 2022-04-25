@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   colors: ^1.4.0
+  dotenv: ^16.0.0
   import-local: ^3.1.0
   minimist: ^1.2.6
   npmlog: ^6.0.2
@@ -12,6 +13,7 @@ specifiers:
 
 dependencies:
   colors: 1.4.0
+  dotenv: 16.0.0
   import-local: 3.1.0
   minimist: 1.2.6
   npmlog: 6.0.2
@@ -81,6 +83,11 @@ packages:
 
   /delegates/1.0.0:
     resolution: {integrity: sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=}
+    dev: false
+
+  /dotenv/16.0.0:
+    resolution: {integrity: sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==}
+    engines: {node: '>=12'}
     dev: false
 
   /downgrade-root/1.2.2:

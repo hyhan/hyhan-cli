@@ -20,6 +20,9 @@
     "access": "public"
   },
   "dependencies": {
-    "npmlog": "^6.0.2"
+    "axios": "^0.26.1",
+    "npmlog": "^6.0.2",
+    "semver": "^7.3.7",
+    "url-join": "^4.0.0"
   }
 }
