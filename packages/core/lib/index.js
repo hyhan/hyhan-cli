@@ -18,7 +18,7 @@ const {
 
 let args, config
 
-function cli() {
+async function cli() {
   try {
     checkPkgVersion()
     checkNodeVersion()
@@ -27,7 +27,7 @@ function cli() {
     checkInputArgs()
     checkArgs()
     checkEnv()
-    checkGlobalUpdate()
+    await checkGlobalUpdate()
   } catch (error) {
     log.error(error.message)
   }
@@ -94,7 +94,6 @@ function createDefaultConfig() {
 }
 
 async function checkGlobalUpdate() {
-  // https://registry.npmjs.org/@hyhan-cli/core
   const { version: currentVersion, name: npmName } = pkg
   const lastVersion = await getNpmSemverVersion(currentVersion, npmName)
   if (semver.gt(lastVersion, currentVersion)) {
