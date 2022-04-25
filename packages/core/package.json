@@ -10,7 +10,7 @@
   "author": "hui <125173679@qq.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/core.js",
+  "main": "lib/index.js",
   "bin": {
     "hyhan": "bin/index.js"
   },
@@ -25,7 +25,15 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "@hyhan-cli/utils": "^1.0.0"
+    "@hyhan-cli/utils": "^1.0.0",
+    "colors": "^1.4.0",
+    "import-local": "^3.1.0",
+    "minimist": "^1.2.6",
+    "npmlog": "^6.0.2",
+    "path-exists": "^5.0.0",
+    "root-check": "^1.0.0",
+    "semver": "^7.3.7",
+    "user-home": "^3.0.0"
   },
   "gitHead": "f901977e42e051b87883fc66b299ebf8c8cc4c4d",
   "publishConfig": {

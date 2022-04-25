@@ -1,9 +1,6 @@
 'use strict'
+const { log } = require('./log.js')
 
 module.exports = {
-  add,
-}
-
-function add(x, y, z) {
-  return x + y + z
+  log,
 }
