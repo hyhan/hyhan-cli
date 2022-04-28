@@ -6,31 +6,78 @@ const semver = require('semver')
 const rootCheck = require('root-check')
 const userHome = require('user-home')
 const colors = require('colors/safe')
-const minimist = require('minimist')
 const dotenv = require('dotenv')
+const commander = require('commander')
 const { log, getNpmSemverVersion } = require('@hyhan-cli/utils')
+// const { init } = require('@hyhan-cli/commands')
 const pkg = require('../package.json')
 const {
   LOWEST_NODE_VERSION,
   DEFAULT_CLI_HOME,
   DEFAULT_CONFIG_FILENAME,
 } = require('./const')
+const exec = require('./exec')
 
-let args, config
+const program = new commander.Command()
+
+let config
 
 async function cli() {
   try {
-    checkPkgVersion()
-    checkNodeVersion()
-    checkRoot()
-    checkUserHome()
-    checkInputArgs()
-    checkArgs()
-    checkEnv()
-    await checkGlobalUpdate()
+    await prepare()
+    await registerCommand()
   } catch (error) {
     log.error(error.message)
   }
+}
+
+async function prepare() {
+  checkPkgVersion()
+  checkNodeVersion()
+  checkRoot()
+  checkUserHome()
+  checkEnv()
+  await checkGlobalUpdate()
+}
+
+async function registerCommand() {
+  program
+    .name(Object.keys(pkg.bin)[0])
+    .usage('<command> [options]')
+    .version(pkg.version)
+    .option('-d, --debug', '是否开启调试模式', false)
+    .option('-tp, --targetPath <targetPath>', '是否指定本地调试文件路径', '')
+
+  program
+    .command('init [projectName]')
+    .option('-f, --force', '是否强制初始化项目')
+    .action(exec)
+
+  program.on('option:debug', function () {
+    const opts = program.opts()
+    if (opts.debug) {
+      process.env.LOG_LEVEL = 'verbose'
+    } else {
+      process.env.LOG_LEVEL = 'info'
+    }
+    log.level = process.env.LOG_LEVEL
+  })
+
+  program.on('option:targetPath', function (targetPath) {
+    if (targetPath) {
+      process.env.CLI_TARGET_PATH = targetPath
+    }
+  })
+
+  program.on('command:*', function (obj) {
+    const availableCommands = program.commands.map((cmd) => cmd.name())
+    console.log(colors.red(`未知的命令：${obj[0]}`))
+    if (availableCommands.length > 0) {
+      console.log(colors.red(`可用命令：${availableCommands.join(',')}`))
+    }
+  })
+
+  program.parse(process.argv)
 }
 
 function checkPkgVersion() {
@@ -55,19 +102,6 @@ function checkUserHome() {
   if (!userHome || !fs.existsSync(userHome)) {
     throw new Error(colors.red('当前登录用户主目录不存在！'))
   }
-}
-
-function checkInputArgs() {
-  args = minimist(process.argv.slice(2))
-}
-
-function checkArgs() {
-  if (args.debug) {
-    process.env.LOG_LEVEL = 'verbose'
-  } else {
-    process.env.LOG_LEVEL = 'info'
-  }
-  log.level = process.env.LOG_LEVEL
 }
 
 function checkEnv() {

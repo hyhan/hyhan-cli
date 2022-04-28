@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   colors: ^1.4.0
+  commander: ^9.2.0
   dotenv: ^16.0.0
   import-local: ^3.1.0
   minimist: ^1.2.6
@@ -13,6 +14,7 @@ specifiers:
 
 dependencies:
   colors: 1.4.0
+  commander: 9.2.0
   dotenv: 16.0.0
   import-local: 3.1.0
   minimist: 1.2.6
@@ -70,6 +72,11 @@ packages:
   /colors/1.4.0:
     resolution: {integrity: sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==}
     engines: {node: '>=0.1.90'}
+    dev: false
+
+  /commander/9.2.0:
+    resolution: {integrity: sha512-e2i4wANQiSXgnrBlIatyHtP1odfUp0BbV5Y5nEGbxtIrStkEOAAzCUirvLBNXHLr7kwLvJl6V+4V3XV9x7Wd9w==}
+    engines: {node: ^12.20.0 || >=14}
     dev: false
 
   /console-control-strings/1.1.0:

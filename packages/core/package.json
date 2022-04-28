@@ -26,7 +26,10 @@
   },
   "dependencies": {
     "@hyhan-cli/utils": "^1.0.0",
+    "@hyhan-cli/commands": "^1.0.0",
+    "@hyhan-cli/models": "^1.0.0",
     "colors": "^1.4.0",
+    "commander": "^9.2.0",
     "dotenv": "^16.0.0",
     "import-local": "^3.1.0",
     "minimist": "^1.2.6",
