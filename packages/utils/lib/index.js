@@ -1,5 +1,6 @@
 'use strict'
-const { log } = require('./log.js')
+const log = require('./log.js')
+const formatPath = require('./format-path')
 const {
   getNpmInfo,
   getNpmVersions,
@@ -11,4 +12,5 @@ module.exports = {
   getNpmInfo,
   getNpmVersions,
   getNpmSemverVersion,
+  formatPath,
 }

@@ -112,6 +112,7 @@ function checkEnv() {
     })
   }
   config = createDefaultConfig()
+  console.log(config)
   log.verbose('环境变量', config)
 }
 

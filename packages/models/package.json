@@ -27,5 +27,11 @@
   },
   "bugs": {
     "url": "https://github.com/hyhan/hyhan-cli/issues"
+  },
+  "dependencies": {
+    "@hyhan-cli/utils": "^1.0.0",
+    "npminstall": "^6.1.0",
+    "path-exists": "^5.0.0",
+    "pkg-dir": "^5.0.0"
   }
 }
